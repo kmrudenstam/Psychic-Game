@@ -35,6 +35,13 @@ window.onload = function() {
       document.getElementById("guessedLetters").innerHTML = ("Guessed Letters: " + userGuess);
       console.log(guessedLetters);
 
+      ///////////////////////////////////////////////////////////////////////////
+
+      // Need to figure out how to store ALL incorrect guessed letters inside array instead of overwriting previous gess
+
+      ///////////////////////////////////////////////////////////////////////////
+      
+
       // Function to run when player guesses the RIGHT letter to reset game
       if ((userGuess === computerGuess[0]) && (guessesLeft > 0)) {
         wins++;
