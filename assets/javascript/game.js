@@ -32,15 +32,9 @@ window.onload = function() {
       guessedLetters.push (userGuess);
       console.log(userGuess)
 
-      document.getElementById("guessedLetters").innerHTML = ("Guessed Letters: " + userGuess);
+      document.getElementById("guessedLetters").innerHTML += (" " + userGuess + ",");
       console.log(guessedLetters);
-
-      ///////////////////////////////////////////////////////////////////////////
-
-      // Need to figure out how to store ALL incorrect guessed letters inside array instead of overwriting previous gess
-
-      ///////////////////////////////////////////////////////////////////////////
-      
+  
 
       // Function to run when player guesses the RIGHT letter to reset game
       if ((userGuess === computerGuess[0]) && (guessesLeft > 0)) {
@@ -52,6 +46,10 @@ window.onload = function() {
         computerGuess.push(compChoice);
         console.log(computerGuess);
         document.getElementById("wins").innerHTML = ("Wins: " + wins);
+
+        // Need to reset guessedLetters array to [0]
+
+
       }
 
       // Function to run if player guesses INCORRECT letter, subtract 1 guess & add incorrect letter to guessedLetters
@@ -66,12 +64,16 @@ window.onload = function() {
       else {
         losses++;
         guessesLeft = 9;
-        guessedLetters.length = 0;
         computerGuess.length = 0;
+        guessedLetters.length = 0;
         var compChoice = computerGuess[Math.floor(Math.random() * computerGuess.length)];
         computerGuess.push(compChoice);
         document.getElementById("losses").innerHTML = ("Losses: " + losses);
+       
         console.log(computerGuess[0]);
+
+        // Need to reset guessedLetters array to [0]
+
       }
 
   };
